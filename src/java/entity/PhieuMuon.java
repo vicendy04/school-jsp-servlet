@@ -3,10 +3,11 @@ package entity;
 import java.util.Date;
 
 public class PhieuMuon {
-public int maPhieuMuon;
-public Date ngayMuon, ngayHenTra;
-public int tongSoLuongSachMuon;
-public String maNguoiDung, ghiChu;
+
+    public int maPhieuMuon;
+    public Date ngayMuon, ngayHenTra;
+    public int tongSoLuongSachMuon;
+    public String maNguoiDung, ghiChu;
 
     public PhieuMuon() {
     }

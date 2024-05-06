@@ -11,6 +11,7 @@
     <!-- Thêm thư viện jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        
         function fetchUserData() {
         var userId = document.getElementById("userId").value;
         var url = "PhieuMuonServlet";
@@ -75,7 +76,7 @@
                                         <th scope="col">Mã phiếu mượn</th>
                                         <th scope="col">Ngày mượn</th>
                                         <th scope="col">Ngày hẹn trả</th>
-                                        <th scope="col">Ngày trả</th>
+                                        <!--<th scope="col">Ngày trả</th>-->
                                         <th scope="col">Số lượng sách mượn</th>
                                         <th scope="col">Tiêu đề sách</th>
                                     </tr>

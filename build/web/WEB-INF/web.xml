@@ -8,6 +8,10 @@
         <servlet-name>CategoryControl</servlet-name>
         <servlet-class>control.CategoryControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LibraryCardSearchControl</servlet-name>
+        <servlet-class>control.LibraryCardSearchControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeControl</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>CategoryControl</servlet-name>
         <url-pattern>/CategoryControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LibraryCardSearchControl</servlet-name>
+        <url-pattern>/LibraryCardSearchControl</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
