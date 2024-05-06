@@ -63,12 +63,13 @@
                 <div class="row">
                     <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
                         <div class="table-responsive">
-                            <form action="PhieuMuonServlet" method="post" class ="form">
+                            <form action="LibraryCardSearchControl" method="post" class ="form">
                                 <div class="form-group">
                                     <label for="userId">Nhập mã người dùng:</label>
                                     <input type="text" class="form-control" id="userId" name="userId">
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="fetchUserData()">Xác nhận</button>
+                                <!--<button type="submit" class="btn btn-primary" onclick="fetchUserData()">Xác nhận</button>-->
+                                <button type="submit" class="btn btn-primary">Xác nhận</button>
                                 <br><br>
                                 <table class="table">
                                     <thead>
@@ -78,10 +79,22 @@
                                         <th scope="col">Ngày hẹn trả</th>
                                         <!--<th scope="col">Ngày trả</th>-->
                                         <th scope="col">Số lượng sách mượn</th>
-                                        <th scope="col">Tiêu đề sách</th>
+                                        <th scope="col">Ghi chú</th>
+                                        <!--<th scope="col">Tiêu đề sách</th>-->
                                     </tr>
                                     </thead>
                                     <tbody id="phieuMuonTable">
+                                        <c:if test="${not empty list}">
+                                        <c:forEach var="phieuMuon" items="${list}">
+                                            <tr>
+                                                <td>${phieuMuon.maPhieuMuon}</td>
+                                                <td>${phieuMuon.ngayMuon}</td>
+                                                <td>${phieuMuon.ngayHenTra}</td>
+                                                <td>${phieuMuon.tongSoLuongSachMuon}</td>
+                                                <td>${phieuMuon.ghiChu}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </c:if>
                                     </tbody>
                                 </table>
                             </form>

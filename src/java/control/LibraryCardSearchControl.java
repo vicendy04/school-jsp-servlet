@@ -35,13 +35,19 @@ public class LibraryCardSearchControl extends HttpServlet {
             throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
-        String txtSearch = request.getParameter("text");
+//        String txtSearch = request.getParameter("text");
+        String userId = request.getParameter("userId");
 
         PhieuMuonDao phieuMuonDao = new PhieuMuonDao();
-        List<PhieuMuon> list = phieuMuonDao.searchByMaNguoiDung(txtSearch);
-        request.setAttribute("listS", list);
+//        List<PhieuMuon> list = phieuMuonDao.searchByMaNguoiDung(txtSearch);
+        List<PhieuMuon> list = phieuMuonDao.searchByMaNguoiDung(userId);
+
+//        request.setAttribute("listS", list);
+        request.setAttribute("list", list);
+
 //        request.getRequestDispatcher("Home.jsp").forward(request, response);
         request.getRequestDispatcher("Cart.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

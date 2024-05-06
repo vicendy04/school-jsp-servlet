@@ -77,7 +77,7 @@ public class PhieuMuonDao {
             connection = new SqlServerDataAccess().getConnection();
 
             // 2. Tạo câu truy vấn SQL với điều kiện tìm kiếm
-            String sql = "SELECT * FROM PhieuMuon WHERE maNguoiDung = ?";
+            String sql = "SELECT MaPhieuMuon, NgayMuon, NgayHenTra, TongSoLuongSachMuon, GhiChu FROM PhieuMuon WHERE maNguoiDung = ?";
 
             // 3. Chuẩn bị và thực thi câu lệnh
             preparedStatement = connection.prepareStatement(sql);
@@ -86,12 +86,16 @@ public class PhieuMuonDao {
 
             // 4. Duyệt qua kết quả và tạo các đối tượng PhieuMuon
             while (resultSet.next()) {
-                int maPhieuMuon = resultSet.getInt("maPhieuMuon");
-                Date ngayMuon = resultSet.getDate("ngayMuon");
-                Date ngayHenTra = resultSet.getDate("ngayHenTra");
-                int tongSoLuongSachMuon = resultSet.getInt("tongSoLuongSachMuon");
-                String ghiChu = resultSet.getString("ghiChu");
-
+//                int maPhieuMuon = resultSet.getInt("maPhieuMuon");
+//                Date ngayMuon = resultSet.getDate("ngayMuon");
+//                Date ngayHenTra = resultSet.getDate("ngayHenTra");
+//                int tongSoLuongSachMuon = resultSet.getInt("tongSoLuongSachMuon");
+//                String ghiChu = resultSet.getString("ghiChu");
+                int maPhieuMuon = resultSet.getInt(1);
+                Date ngayMuon = resultSet.getDate(2);
+                Date ngayHenTra = resultSet.getDate(3);
+                int tongSoLuongSachMuon = resultSet.getInt(4);
+                String ghiChu = resultSet.getString(5);
                 PhieuMuon phieuMuon = new PhieuMuon(maPhieuMuon, ngayMuon, ngayHenTra, tongSoLuongSachMuon, maNguoiDung, ghiChu);
                 danhSachPhieuMuon.add(phieuMuon);
             }
